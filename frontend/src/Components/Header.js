@@ -2,8 +2,8 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
 
-import MenuIcon from '@material-ui/icons/Menu';
-import ClearIcon from '@material-ui/icons/Clear';
+import MenuIcon from '@mui/icons-material/Menu';
+import ClearIcon from '@mui/icons-material/Clear';
 
 function Header() {
 
@@ -20,32 +20,26 @@ function Header() {
     return (
         <div className="header">
             <div className="logo-nav">
-            <Link to='/'>
-                <a href="#home">LIBRARY</a>
-            </Link>
+                <Link to='/'>
+                    <h1>LIBRARY</h1>
+                </Link>
             </div>
             <div className='nav-right'>
                 <input className='search-input' type='text' placeholder='Search a Book'/>
                 <ul className={menutoggle ? "nav-options active" : "nav-options"}>
-                    <li className="option" onClick={() => { closeMenu() }}>
-                        <Link to='/'>
-                            <a href="#home">Home</a>
-                        </Link>
+                    <li className="option" onClick={closeMenu}>
+                        <Link to='/'>Home</Link>
                     </li>
-                    <li className="option" onClick={() => { closeMenu() }}>
-                        <Link to='/books'>
-                        <a href="#books">Books</a>
-                        </Link>
+                    <li className="option" onClick={closeMenu}>
+                        <Link to='/books'>Books</Link>
                     </li>
-                    <li className="option" onClick={() => { closeMenu() }}>
-                        <Link to='/signin'>
-                        <a href='signin'>SignIn</a>
-                        </Link>
+                    <li className="option" onClick={closeMenu}>
+                        <Link to='/signin'>SignIn</Link>
                     </li>
                 </ul>
             </div>
 
-            <div className="mobile-menu" onClick={() => { Toggle() }}>
+            <div className="mobile-menu" onClick={Toggle}>
                 {menutoggle ? (
                     <ClearIcon className="menu-icon" style={{ fontSize: 40 }} />
                 ) : (
@@ -56,4 +50,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Header;

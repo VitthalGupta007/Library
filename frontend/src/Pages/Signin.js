@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import './Signin.css'
 import axios from 'axios'
 import { AuthContext } from '../Context/AuthContext.js'
-import Switch from '@material-ui/core/Switch';
+import Switch from '@mui/material/Switch';  // updated import
 
 function Signin() {
     const [isStudent, setIsStudent] = useState(true)
